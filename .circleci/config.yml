@@ -54,7 +54,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - boot/dist
+            - choerodon-front-iam/boot/dist
 
   docker_build:
     <<: *default
