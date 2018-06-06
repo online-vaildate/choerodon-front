@@ -24,7 +24,7 @@ jobs:
             chmod a+x ./boot/structure/moduleCi.sh
             ./boot/structure/moduleCi.sh boot iam devops
       - run: |
-            cd boot
+            cd choerodon-front-iam/boot
             ./node_modules/.bin/gulp start
             npm run devbuild
 
@@ -47,7 +47,7 @@ jobs:
             cd boot && npm install choerodon-ui -S  && cd ..
             ./boot/structure/moduleCi.sh boot iam devops
       - run: |
-            cd boot
+            cd choerodon-front-iam/boot
             ./node_modules/.bin/gulp start
             npm run build
           
