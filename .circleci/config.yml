@@ -14,6 +14,9 @@ jobs:
     steps:
       - checkout
       - run: git submodule update --init
+      - run: cd ~/repo/choerodon-front-devops && git submodule update --init
+      - run: cd ~/repo/choerodon-front-iam && git submodule update --init
+      - run: cd ~/repo
       - run: |
             cp -fr ./choerodon-front-devops/devops ./choerodon-front-iam
             cd choerodon-front-iam
@@ -33,6 +36,9 @@ jobs:
     steps:
       - checkout
       - run: git submodule update --init
+      - run: cd ~/repo/choerodon-front-devops && git submodule update --init
+      - run: cd ~/repo/choerodon-front-iam && git submodule update --init
+      - run: cd ~/repo
       - run: |
             cp -fr ./choerodon-front-devops/devops ./choerodon-front-iam
             cd choerodon-front-iam
