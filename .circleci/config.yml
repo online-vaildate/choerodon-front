@@ -15,9 +15,11 @@ jobs:
       - checkout
       - run: git submodule update --init
       - run: |
-            python ./boot/structure/configAuto.py iam
+            cp -fr ./choerodon-front-devops/devops ./choerodon-front-iam
+            cd choerodon-front-iam
+            python ./boot/structure/configAuto.py iam devops
             chmod a+x ./boot/structure/moduleCi.sh
-            ./boot/structure/moduleCi.sh boot iam
+            ./boot/structure/moduleCi.sh boot iam devops
       - run: |
             cd boot
             ./node_modules/.bin/gulp start
@@ -32,10 +34,12 @@ jobs:
       - checkout
       - run: git submodule update --init
       - run: |
-            python ./boot/structure/configAuto.py iam
+            cp -fr ./choerodon-front-devops/devops ./choerodon-front-iam
+            cd choerodon-front-iam
+            python ./boot/structure/configAuto.py iam devops
             chmod a+x ./boot/structure/moduleCi.sh
             cd boot && npm install choerodon-ui -S  && cd ..
-            ./boot/structure/moduleCi.sh boot iam
+            ./boot/structure/moduleCi.sh boot iam devops
       - run: |
             cd boot
             ./node_modules/.bin/gulp start
