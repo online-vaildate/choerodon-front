@@ -65,9 +65,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: mv choerodon-front-iam/boot/dist ./dist
-      - run: mv 
-      - run: choerodon-front-iam/config.yml ./config.yml
+      - run: mv choerodon-front-iam/boot/dist ./dist 
+      - run: mv choerodon-front-iam/config.yml ./config.yml
           sed -i "/s/registry.cn-hangzhou.aliyuncs.com\/choerodon-tools/choerodon/g" Dockerfile
           export CI_COMMIT_TAG=$CIRCLE_TAG
           docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASSWORD}
@@ -96,7 +95,6 @@ workflows:
               only: /^.*/
             branches:
               only:
-                - /^.*/
                 - /^release-.*$/
                 - /^hotfix-.*$/
   daily:
