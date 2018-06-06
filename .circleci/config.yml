@@ -57,10 +57,8 @@ jobs:
             - choerodon-front-iam/boot/dist
 
   docker_build:
-    <<: *default
+    machine: true
     steps:
-      - setup_remote_docker:
-            version: 17.05.0-ce
       - checkout
       - attach_workspace:
           at: .
